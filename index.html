@@ -11,9 +11,24 @@
   <div class="container">
     <h1 style="text-align:center">Expense tracker</h1>
       <div class="row">
-        <div class="col-md-6">
-          <h2>Add Purchase</h2>
+        <div class="col-md-4">
+          <h2>Categories</h2>
+          <form id="new-category">
+            <div class="form-group">
+              <label for="category">Category</label>
+              <input id="categories" type="text" class="form-control" placeholder="New Category">
+            </div>
+            <button type="Submit" class="btn btn-success btn-lg btn-block">Add</button>
+          </form>
+          <ul id="category-submit">
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
           <form id="expense-input">
+          <h2>Add Purchase</h2>
             <div class="form-group">
               <label for="description">Description</label>
               <input id="desc" type="text" class="form-control" placeholder="Enter Description">
@@ -29,7 +44,7 @@
             <button type="Submit" class="btn btn-info btn-lg btn-block">Track</button>
           </form>
         </div>
-        <div class="col-md-6" id="table">
+        <div class="col-md-4" id="table">
           <table id="table-value" class="table table-bordered">
             <h2>Purchases</h2>
             <tr style="text-align:center">

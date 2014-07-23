@@ -1,3 +1,10 @@
 #table {
   display: none;
 }
+#expense-input {
+  display: none;
+}
+#category-submit {
+  cursor: pointer;
+  color: blue;
+}

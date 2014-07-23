@@ -6,6 +6,12 @@ var Purchase = {
 
 };
 
+// var Category = {
+//   add: function(){
+// return
+//   }
+// };
+
 
 $(document).ready(function(){
  $("form#expense-input").submit(function(event){
@@ -15,20 +21,30 @@ $(document).ready(function(){
     newPurchase.price = $("input#price").val();
     newPurchase.quantity = $("input#quant").val();
 
-$("table#table-value").append("<tr><td>" + $("input#desc").val() + "</td>"
+    $("table#table-value").append("<tr><td>" + $("input#desc").val() + "</td>"
                       + "<td>$" + $("input#price").val() + "</td>" +
                        "<td>" + $("input#quant").val() + "</td>" + "<td>$" +
                        newPurchase.total() + "</td></tr>");
 
-$("#table").show();
-event.preventDefault();
+    $("#table").show();
 
+    $("input#desc").val("");
+    $("input#price").val("");
+    $("input#quant").val("");
 
-$("input#desc").val("");
-$("input#price").val("");
-$("input#quant").val("");
-
-
+    event.preventDefault();
 
   });
+ $("form#new-category").submit(function(event){
+
+
+    $("ul#category-submit").append("<li>" + $("input#categories").val() + "</li>");
+
+    $("#expense-input").show();
+
+    $("input#categories").val("");
+
+    event.preventDefault();
+
+ })
 });
