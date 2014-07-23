@@ -19,7 +19,7 @@ $("table#table-value").append("<tr><td>" + $("input#desc").val() + "</td>"
                        "<td>" + $("input#quant").val() + "</td>" + "<td>$" +
                        Purchase.total() + "</td></tr>");
 
-
+$("#table").show();
 event.preventDefault();
 
 
