@@ -1,20 +1,33 @@
-$(document).ready(function() {
+
+var Purchase = {
+  total: function() {
+    return this.price * this.quantity
+ }
+
+};
+
+
+$(document).ready(function(){
  $("form#expense-input").submit(function(event){
 
-    var pDescription = $("input#desc").val();
-    var pPrice = $("input#price").val();
-    var pQuantity = $("input#quant").val();
+    Purchase.description = $("input#desc").val();
+    Purchase.price = $("input#price").val();
+    Purchase.quantity = $("input#quant").val();
+
+$("table#table-value").append("<tr><td>" + $("input#desc").val() + "</td>"
+                      + "<td>$" + $("input#price").val() + "</td>" +
+                       "<td>" + $("input#quant").val() + "</td>" + "<td>$" +
+                       Purchase.total() + "</td></tr>");
+
 
 event.preventDefault();
 
 
-$("table#table-value").append("<tr><td>" + $("input#desc").val() + "</td>"
-                      + "<td>" + $("input#price").val() + "</td>" +
-                       "<td>" + $("input#quant").val() "</td></tr>");
-
-
 $("input#desc").val("");
 $("input#price").val("");
+$("input#quant").val("");
+
+
 
   });
 });
